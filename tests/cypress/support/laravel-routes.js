@@ -3,7 +3,7 @@ Cypress.Laravel = {
 
     route: (name, parameters = {}) => {
         assert(
-            Cypress.Laravel.routes.hasOwnProperty(name),
+            Object.prototype.hasOwnProperty.call(Cypress.Laravel.routes, name),
             `Laravel route "${name}" does not exist.`
         );
 

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-    interface Chainable<Subject> {
+    interface Chainable {
         /**
          * Log in the user with the given attributes, or create a new user and then log them in.
          *
@@ -9,7 +9,7 @@ declare namespace Cypress {
          * cy.login()
          * cy.login({ id: 1 })
          */
-        login(attributes?: object): Chainable<any>;
+        login(attributes?: object): Chainable<unknown>;
 
         /**
          * Log out the current user.
@@ -17,7 +17,7 @@ declare namespace Cypress {
          * @example
          * cy.logout()
          */
-        logout(): Chainable<any>;
+        logout(): Chainable<unknown>;
 
         /**
          * Fetch the currently authenticated user.
@@ -25,7 +25,7 @@ declare namespace Cypress {
          * @example
          * cy.currentUser()
          */
-        currentUser(): Chainable<any>;
+        currentUser(): Chainable<unknown>;
 
         /**
          * Fetch a CSRF token from the server.
@@ -33,7 +33,7 @@ declare namespace Cypress {
          * @example
          * cy.logout()
          */
-        csrfToken(): Chainable<any>;
+        csrfToken(): Chainable<unknown>;
 
         /**
          * Fetch a fresh list of URI routes from the server.
@@ -41,7 +41,7 @@ declare namespace Cypress {
          * @example
          * cy.logout()
          */
-        refreshRoutes(): Chainable<any>;
+        refreshRoutes(): Chainable<unknown>;
 
         /**
          * Create and persist a new Eloquent record using Laravel model factories.
@@ -52,7 +52,7 @@ declare namespace Cypress {
          * cy.create('App\\User', 2, { active: false });
          * cy.create({ model: 'App\\User', state: ['guest'], relations: ['profile'], count: 2 }
          */
-        create(): Chainable<any>;
+        create(): Chainable<unknown>;
 
         /**
          * Refresh the database state using Laravel's migrate:fresh command.
@@ -61,7 +61,7 @@ declare namespace Cypress {
          * cy.refreshDatabase()
          * cy.refreshDatabase({ '--drop-views': true }
          */
-        refreshDatabase(options?: object): Chainable<any>;
+        refreshDatabase(options?: object): Chainable<unknown>;
 
         /**
          * Run Artisan's db:seed command.
@@ -70,7 +70,7 @@ declare namespace Cypress {
          * cy.seed()
          * cy.seed('PlansTableSeeder')
          */
-        seed(seederClass?: string): Chainable<any>;
+        seed(seederClass?: string): Chainable<unknown>;
 
         /**
          * Run an Artisan command.
@@ -78,7 +78,7 @@ declare namespace Cypress {
          * @example
          * cy.artisan()
          */
-        artisan(command: string, parameters?: object, options?: object): Chainable<any>;
+        artisan(command: string, parameters?: object, options?: object): Chainable<unknown>;
 
         /**
          * Execute arbitrary PHP on the server.
@@ -87,6 +87,6 @@ declare namespace Cypress {
          * cy.php('2 + 2')
          * cy.php('App\\User::count()')
          */
-        php(command: string): Chainable<any>;
+        php(command: string): Chainable<unknown>;
     }
 }

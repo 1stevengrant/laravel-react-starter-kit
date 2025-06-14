@@ -17,9 +17,8 @@
  */
 import swapEnv from './swap-env.js'
 
-export default (on, config) => {
+export default (on) => {
     // `on` is used to hook into various events Cypress emits
-    // `config` is the resolved Cypress config
 
     on('task', swapEnv);
 };
