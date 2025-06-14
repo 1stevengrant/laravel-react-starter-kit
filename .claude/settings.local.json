@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer require:*)",
+      "Bash(npm install:*)",
+      "Bash(php artisan:*)",
+      "Bash(npm run cypress:open:*)",
+      "Bash(npx cypress:*)",
+      "Bash(npm run cypress:run:*)",
+      "Bash(npm run types:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  }
+}
