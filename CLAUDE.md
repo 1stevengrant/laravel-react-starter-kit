@@ -51,6 +51,25 @@ npm run build:ssr           # Build with server-side rendering
 ### Laravel Patterns
 - Uses DTOs (Data Transfer Objects) for type-safe data handling
 - Controllers return Inertia responses with data prepared by DTOs
+- Should use route model binding for clean URL handling
+- No business logic in controllers; keep them thin and focused
+- Use Spatie Laravel Data for validation and transformation of incoming data
+Split large controllers into smaller ones based on responsibility.
+Avoid bloated controllers by following the standard RESTful action pattern:
+•	index – list resources
+•	show – display a single resource
+•	create – show the form to create a resource
+•	store – handle creation logic
+•	edit – show the form to edit a resource
+•	update – handle update logic
+•	destroy – delete a resource
+
+🛑 If a controller contains logic outside these seven, consider extracting it into:
+- A new controller
+- A job class under `App\Jobs\*`
+- An action class under `App\Actions\*`
+
+👉 Use this pattern as a forcing function to discover better structure and domain boundaries.
 
 ### Directory Structure
 ```
