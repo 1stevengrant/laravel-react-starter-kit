@@ -25,7 +25,7 @@ type ProfileForm = {
 };
 
 export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: boolean; status?: string }) {
-    const { auth } = usePage<SharedData>().props;
+    const { auth, flash } = usePage<SharedData>().props;
 
     const { data, setData, patch, errors, processing, recentlySuccessful } = useForm<Required<ProfileForm>>({
         name: auth.user.name,
@@ -54,6 +54,7 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
 
                             <Input
                                 id="name"
+                                name="name"
                                 className="mt-1 block w-full"
                                 value={data.name}
                                 onChange={(e) => setData('name', e.target.value)}
@@ -70,6 +71,7 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
 
                             <Input
                                 id="email"
+                                name="email"
                                 type="email"
                                 className="mt-1 block w-full"
                                 value={data.email}
@@ -105,7 +107,7 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                         )}
 
                         <div className="flex items-center gap-4">
-                            <Button disabled={processing}>Save</Button>
+                            <Button type="submit" disabled={processing}>Save</Button>
 
                             <Transition
                                 show={recentlySuccessful}
@@ -117,6 +119,12 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                                 <p className="text-sm text-neutral-600">Saved</p>
                             </Transition>
                         </div>
+
+                        {flash?.success && (
+                            <div className="text-sm font-medium text-green-600">
+                                {flash.success}
+                            </div>
+                        )}
                     </form>
                 </div>
 

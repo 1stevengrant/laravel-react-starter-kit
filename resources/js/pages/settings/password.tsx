@@ -1,9 +1,9 @@
 import InputError from '@/components/input-error';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
-import { type BreadcrumbItem } from '@/types';
+import { type BreadcrumbItem, type SharedData } from '@/types';
 import { Transition } from '@headlessui/react';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import { FormEventHandler, useRef } from 'react';
 
 import HeadingSmall from '@/components/heading-small';
@@ -22,6 +22,7 @@ export default function Password() {
     const passwordInput = useRef<HTMLInputElement>(null);
     const currentPasswordInput = useRef<HTMLInputElement>(null);
 
+    const { flash } = usePage<SharedData>().props;
     const { data, setData, errors, put, reset, processing, recentlySuccessful } = useForm({
         current_password: '',
         password: '',
@@ -62,6 +63,7 @@ export default function Password() {
 
                             <Input
                                 id="current_password"
+                                name="current_password"
                                 ref={currentPasswordInput}
                                 value={data.current_password}
                                 onChange={(e) => setData('current_password', e.target.value)}
@@ -79,6 +81,7 @@ export default function Password() {
 
                             <Input
                                 id="password"
+                                name="new_password"
                                 ref={passwordInput}
                                 value={data.password}
                                 onChange={(e) => setData('password', e.target.value)}
@@ -96,6 +99,7 @@ export default function Password() {
 
                             <Input
                                 id="password_confirmation"
+                                name="new_password_confirmation"
                                 value={data.password_confirmation}
                                 onChange={(e) => setData('password_confirmation', e.target.value)}
                                 type="password"
@@ -108,7 +112,7 @@ export default function Password() {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <Button disabled={processing}>Save password</Button>
+                            <Button type="submit" disabled={processing}>Save password</Button>
 
                             <Transition
                                 show={recentlySuccessful}
@@ -120,6 +124,12 @@ export default function Password() {
                                 <p className="text-sm text-neutral-600">Saved</p>
                             </Transition>
                         </div>
+
+                        {flash?.success && (
+                            <div className="text-sm font-medium text-green-600">
+                                {flash.success}
+                            </div>
+                        )}
                     </form>
                 </div>
             </SettingsLayout>
