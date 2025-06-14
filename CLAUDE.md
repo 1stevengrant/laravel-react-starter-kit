@@ -54,6 +54,8 @@ npm run build:ssr           # Build with server-side rendering
 - Should use route model binding for clean URL handling
 - No business logic in controllers; keep them thin and focused
 - Use Spatie Laravel Data for validation and transformation of incoming data
+- Use a custom query builder for complex queries, keeping them reusable and testable
+
 Split large controllers into smaller ones based on responsibility.
 Avoid bloated controllers by following the standard RESTful action pattern:
 •	index – list resources
