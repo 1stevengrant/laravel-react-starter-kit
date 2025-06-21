@@ -11,7 +11,9 @@
       "Bash(npm run lint)",
       "Bash(npm run build:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(composer test)",
+      "Bash(npm run test:e2e:*)"
     ],
     "deny": []
   }
