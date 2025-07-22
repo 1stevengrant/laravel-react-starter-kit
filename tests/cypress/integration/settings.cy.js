@@ -6,8 +6,9 @@ describe('Settings', () => {
 
     it('allows users to update their profile', () => {
         cy.visit('/settings/profile');
-        
-        cy.get('[name="name"]').clear().type('Updated Name');
+
+        cy.get('[name="first_name"]').clear().type('Updated First Name');
+        cy.get('[name="last_name"]').clear().type('Updated Last Name');
         cy.get('[name="email"]').clear().type('updated@example.com');
         
         cy.get('button[type="submit"]').click();

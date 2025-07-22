@@ -1,4 +1,53 @@
 {
+  "filament.exports.download": {
+    "name": "filament.exports.download",
+    "domain": null,
+    "action": "Filament\\Actions\\Exports\\Http\\Controllers\\DownloadExport",
+    "uri": "filament/exports/{export}/download",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "filament.imports.failed-rows.download": {
+    "name": "filament.imports.failed-rows.download",
+    "domain": null,
+    "action": "Filament\\Actions\\Imports\\Http\\Controllers\\DownloadImportFailureCsv",
+    "uri": "filament/imports/{import}/failed-rows/download",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "filament.control.auth.login": {
+    "name": "filament.control.auth.login",
+    "domain": null,
+    "action": "Filament\\Pages\\Auth\\Login",
+    "uri": "control/login",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "filament.control.auth.logout": {
+    "name": "filament.control.auth.logout",
+    "domain": null,
+    "action": "Filament\\Http\\Controllers\\Auth\\LogoutController",
+    "uri": "control/logout",
+    "method": [
+      "POST"
+    ]
+  },
+  "filament.control.pages.dashboard": {
+    "name": "filament.control.pages.dashboard",
+    "domain": null,
+    "action": "Filament\\Pages\\Dashboard",
+    "uri": "control",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
   "cypress.factory": {
     "name": "cypress.factory",
     "domain": null,

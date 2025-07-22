@@ -6,21 +6,23 @@ describe('Authentication', () => {
     it('allows user registration', () => {
         cy.visit('/register');
         
-        cy.get('[name="name"]').type('Test User');
+        cy.get('[name="first_name"]').type('Test');
+        cy.get('[name="last_name"]').type('User');
         cy.get('[name="email"]').type('test@example.com');
         cy.get('[name="password"]').type('password123');
         cy.get('[name="password_confirmation"]').type('password123');
         
         cy.get('button[type="submit"]').click();
         
-        cy.url().should('include', '/dashboard');
-        cy.contains('Dashboard').should('be.visible');
+        cy.url().should('include', '/verify-email');
+        cy.contains('Verify').should('be.visible');
     });
 
     it('allows user login', () => {
         cy.create('App\\Models\\User', {
             email: 'test@example.com',
-            password: 'password123'
+            password: 'password123',
+            email_verified_at: new Date().toISOString()
         });
 
         cy.visit('/login');
