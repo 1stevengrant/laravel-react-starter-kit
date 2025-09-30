@@ -44,6 +44,13 @@ describe('Settings', function () {
         $page = visit('/settings/appearance')
             ->on();
 
-        $page->click('[data-testid="theme-toggle"]');
+        // Verify the theme toggle component is present
+        $page->assertPresent('[data-testid="theme-toggle"]');
+
+        // Click on the Dark theme button
+        $page->click('[data-testid="theme-toggle"] button:has-text("Dark")');
+
+        // Verify we're still on the appearance page
+        $page->assertPathIs('/settings/appearance');
     });
 });
