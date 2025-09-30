@@ -24,7 +24,7 @@ describe('Authentication', function () {
         $user = User::factory()->create([
             'email' => 'test@example.com',
             'password' => bcrypt('password123'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
 
         $page = visit('/login')
