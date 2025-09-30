@@ -121,6 +121,15 @@
       "POST"
     ]
   },
+  "boost.browser-logs": {
+    "name": "boost.browser-logs",
+    "domain": null,
+    "action": "Closure",
+    "uri": "_boost/browser-logs",
+    "method": [
+      "POST"
+    ]
+  },
   "horizon.stats.index": {
     "name": "horizon.stats.index",
     "domain": null,

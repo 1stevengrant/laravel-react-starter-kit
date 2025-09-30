@@ -17,5 +17,9 @@
       "Bash(git push:*)"
     ],
     "deny": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "laravel-boost"
+  ],
+  "enableAllProjectMcpServers": true
 }
