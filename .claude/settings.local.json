@@ -14,12 +14,17 @@
       "Bash(git commit:*)",
       "Bash(composer test)",
       "Bash(npm run test:e2e:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git log:*)",
+      "Bash(composer remove:*)",
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:pestphp.com)",
+      "Bash(npx playwright:*)"
     ],
     "deny": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "laravel-boost"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

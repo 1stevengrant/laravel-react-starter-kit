@@ -21,11 +21,11 @@ So be it, until the product is shipped and there are no bugs, but profit!
 An opinionated Laravel + React + Inertia.js starter kit that won't make you cry.
 
 ### Battle-Tested Arsenal
-- **ShadCN Components** - All of them, with a [cosmic-night theme](https://tweakcn.com/editor/theme?theme=cosmic-night) that won't burn your retinas
-- **Laravel Horizon** - Because watching queues is oddly therapeutic  
+- **ShadCN Components** - All of them, with a [modern-minimal theme](https://tweakcn.com/editor/theme?theme=modern-minimal) that's clean and sophisticated
+- **Laravel Horizon** - Because watching queues is oddly therapeutic
 - **Laravel Pulse** - Performance monitoring for when things inevitably break
+- **Laravel Boost** - AI-powered MCP server with database schema access, Artisan commands, error logs, Tinker execution, and semantic documentation search
 - **Saloon** - API integrations that don't make you want to quit programming
 - **Sentry** - Error tracking (spoiler: there will be errors)
-- **PEST** - PHP testing that doesn't make you want to throw your laptop out the window
-- **Cypress** - E2E testing that actually works with Laravel (thanks Laracasts!)
+- **PEST 4** - PHP testing with browser testing built-in (goodbye Cypress, hello native Laravel browser testing!)
 - **Spatie Everything** - Enum, Activity Log, Ray, Laravel Data, TypeScript Transformer (basically the Swiss Army knife of Laravel)

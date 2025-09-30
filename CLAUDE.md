@@ -28,10 +28,8 @@ npm run types               # TypeScript type checking
 
 ### Testing
 ```bash
-composer test               # Run Pest PHP tests
-npm run test:e2e            # Run Cypress end-to-end tests
-npm run cypress:open        # Open Cypress test runner
-npm run cypress:run         # Run Cypress tests headlessly
+composer test               # Run Pest PHP tests (includes browser tests)
+php artisan test            # Alternative command to run tests
 ```
 
 ### Production
@@ -90,7 +88,7 @@ Avoid bloated controllers by following the standard RESTful action pattern:
 ```
 
 ### UI Component System
-- Complete ShadCN/UI component library with custom "cosmic-night" theme
+- Complete ShadCN/UI component library with custom "modern-minimal" theme
 - Built on Radix UI primitives for accessibility
 - Dark/light mode support with system preference detection
 - Form handling with React Hook Form + Zod validation
@@ -111,17 +109,17 @@ Avoid bloated controllers by following the standard RESTful action pattern:
 
 ## Testing Approach
 
-- Backend: Pest PHP for feature and unit tests
-- Frontend: Cypress for end-to-end testing with Laracasts integration
+- Backend: Pest 4 PHP for feature and unit tests
+- Browser Testing: Pest 4's built-in browser testing (Drift plugin) for end-to-end tests
 - Code Quality: ESLint + TypeScript for static analysis
 - Database: In-memory SQLite for fast testing
 
-### Cypress Testing
-- Integrated with Laravel using Laracasts Cypress package
-- Tests located in `tests/cypress/integration/`
-- Includes Laravel-specific commands like `cy.login()`, `cy.create()`, `cy.refreshDatabase()`
-- Configured to use `http://localhost:8000` as base URL
-- Separate `.env.cypress` environment for test isolation
+### Pest 4 Browser Testing
+- Uses Pest Drift plugin for browser automation
+- Browser tests located in `tests/Feature/Browser/`
+- Uses Laravel's built-in authentication helpers like `loginAs()`
+- Supports assertions like `assertSee()`, `assertPresent()`, `assertPathIs()`
+- Tests run headlessly by default for CI/CD integration
 - **Note**: Start Laravel dev server (`php artisan serve`) before running tests
 
 ## Development Notes
