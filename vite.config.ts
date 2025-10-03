@@ -13,6 +13,7 @@ export default defineConfig({
             ssr: 'resources/js/ssr.tsx',
             refresh: true,
         }),
+        wayfinder(),
         react(),
         run([
             {
